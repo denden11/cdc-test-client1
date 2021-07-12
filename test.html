@@ -6,7 +6,7 @@
     src="https://cdns.us1.gigya.com/js/gigya.js?apikey=3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ">
         // STEP 2 - Defining a global configuration object:
         {
-            enabledProviders: "facebook"
+            enabledProviders: "google"
         }
     </script>
 </head>
@@ -16,7 +16,7 @@
         function Login() {
             var params = {
                 "callback": onLogin,
-                "provider": "facebook",
+                "provider": "google",
                 context: 'testLogin'
             };
             gigya.socialize.login(params);
@@ -40,7 +40,7 @@
     <div id="runningCodeExample"
         style="border: 1px solid skyblue; padding: 15px; width: 400px; display: block; height: auto;">
         <center>
-            <input type="button" onclick="Login()" value="Connect to Facebook" />
+            <input type="button" onclick="Login()" value="Connect to google" />
             <div id="UserInfo">
                 <div id="divUserName"></div>
                 <div id="divUserPhoto"><img id="imgUserPhoto"
