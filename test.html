@@ -28,6 +28,7 @@
                 document.getElementById('divUserName').innerHTML = response.user.nickname;
                 ///set the photo to image src attribute.
                 document.getElementById('imgUserPhoto').src = response.user.photoURL;
+                console.log(response);
             }
             else {
                 //handle errors
