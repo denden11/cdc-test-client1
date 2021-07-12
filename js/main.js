@@ -7,4 +7,5 @@ function GigyaLoadFunctions() {gigya.accounts.getAccountInfo({"callback":functio
 }
 var onGigyaServiceReady = function() {
     GigyaLoadFunctions();
+    console.log("hey");
 }
