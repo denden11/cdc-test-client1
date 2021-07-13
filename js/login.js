@@ -2,6 +2,7 @@ import {liteRegStart} from "js/lite-registration.js";
 {
   enabledProviders: "google"
 }
+document.getElementById("btnConnect").addEventListener("click", Login);
 function Login() {
   var params = {
     "callback": onLogin,
