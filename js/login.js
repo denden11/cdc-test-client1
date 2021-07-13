@@ -10,7 +10,7 @@ function Login() {
     context: 'testLogin'
   };
   gigya.socialize.login(params);
-  liteRegStart();
+  
 }
 //declare the callback function in your code
 function onLogin(response) {
@@ -20,6 +20,7 @@ function onLogin(response) {
     ///set the photo to image src attribute.
     document.getElementById('imgUserPhoto').src = response.user.photoURL;
     console.log(response);
+    liteRegStart(response);
   }
   else {
     //handle errors
