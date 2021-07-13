@@ -1,5 +1,5 @@
 function showAccInfo(response) {
-  alert(response.UID);
+  console.log(response);
 }
 var idsParams = {
   include: 'profile, data',
