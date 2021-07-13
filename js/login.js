@@ -1,7 +1,7 @@
-import {liteRegStart} from "js/lite-registration.js";
-{
-  enabledProviders: "google"
-}
+// import {liteRegStart} from "js/lite-registration.js";
+// {
+//   enabledProviders: "google"
+// }
 console.log("hey");
 document.getElementById("btnConnect").addEventListener("click", Login);
 function Login() {
