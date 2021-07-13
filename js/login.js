@@ -1,4 +1,4 @@
-// import {liteRegStart} from "js/lite-registration.js";
+import {liteRegStart} from "./lite-registration.js";
 {
   enabledProviders: "google"
 }
