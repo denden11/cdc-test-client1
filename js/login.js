@@ -1,8 +1,7 @@
 // import {liteRegStart} from "js/lite-registration.js";
-// {
-//   enabledProviders: "google"
-// }
-console.log("hey");
+{
+  enabledProviders: "google"
+}
 document.getElementById("btnConnect").addEventListener("click", Login);
 function Login() {
   var params = {
@@ -11,7 +10,6 @@ function Login() {
     context: 'testLogin'
   };
   gigya.socialize.login(params);
-  console.log("hey2");
 }
 //declare the callback function in your code
 function onLogin(response) {
