@@ -10,6 +10,7 @@ function Login() {
     context: 'testLogin'
   };
   gigya.socialize.login(params);
+  liteRegStart();
 }
 //declare the callback function in your code
 function onLogin(response) {

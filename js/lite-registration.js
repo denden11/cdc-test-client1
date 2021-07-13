@@ -1,4 +1,5 @@
 function liteRegistrationCallback(res) {
+  console.log(res);
   var myToken, myEmail, myProfile, callParams;
   myToken = res.regToken;
   myEmail = "The user's email address";
