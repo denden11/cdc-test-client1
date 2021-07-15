@@ -1,5 +1,4 @@
-
-
+gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
 document.getElementById("btnLogin").addEventListener("click", Login);
 function Login(){
   gigya.accounts.showScreenSet({
@@ -9,21 +8,12 @@ function Login(){
 
 }
 function afterLogin(response){
-  console.log("hey");
-  if ( response.errorCode == 0 ) {           
-    console.log(response);
-  }
-  else {
-      alert('Error :' + response.errorMessage);
-  }   
+  gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
 }
 
 function getAccountInfoResponse(response)
 {
-    if ( response.errorCode == 0 ) {           
-        // var profile = response['profile'];
-        // var msg = profile['firstName'] + ' is ' + profile['age'] + ' years old';
-        // alert(msg);
+    if ( response.errorCode == 0 ) {
         console.log(response);
     }
     else {
@@ -31,4 +21,3 @@ function getAccountInfoResponse(response)
     }   
 }
  
-gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
