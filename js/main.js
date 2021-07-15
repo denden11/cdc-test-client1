@@ -6,12 +6,11 @@ function Login(){
   var isLoggedin = false;
   gigya.accounts.showScreenSet({
     screenSet:'Default-RegistrationLogin',
-    onAfterSubmit:afterSubmit
+    onAfterSubmit:getAccountInfo
   });
-
 }
-function afterSubmit(){
-  gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
+function getAccountInfo(){
+  console.log(gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse }));
 }
 function getAccountInfoResponse(response)
 {
@@ -22,6 +21,7 @@ function getAccountInfoResponse(response)
     }
     else {
         console.log('Error :' + response.errorMessage);
-    }   
+    }
+    return "hey";   
 }
  
