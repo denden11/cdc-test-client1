@@ -3,6 +3,8 @@ import {liteRegStart} from "./lite-registration.js";
   enabledProviders: "google"
 }
 document.getElementById("btnConnect").addEventListener("click", Login);
+document.getElementById("btnRegister").addEventListener("click", Register);
+
 function Login() {
   var params = {
     "callback": onLogin,
@@ -28,4 +30,8 @@ function onLogin(response) {
       "Error details: " + response.errorMessage + '\n' +
       "In method: " + response.operation);
   }
+}
+
+function Register(){
+  gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});
 }
