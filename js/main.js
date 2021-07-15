@@ -1,8 +1,9 @@
 
-document.getElementById("btnLogin").addEventListener("click", Login);
 
+document.getElementById("btnLogin").addEventListener("click", Login);
 function Login(){
-  gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});
+  var sample = gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});
+  console.log(sample);
 }
 
 function getAccountInfoResponse(response)
