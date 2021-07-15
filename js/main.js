@@ -9,6 +9,7 @@ function Login(){
 
 }
 function afterLogin(response){
+  console.log("hey");
   if ( response.errorCode == 0 ) {           
     console.log(response);
   }
