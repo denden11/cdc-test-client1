@@ -1,5 +1,5 @@
 
-afterSubmit;
+getAccountInfo;
 document.getElementById("btnLogin").addEventListener("click", Login);
 
 function Login(){
