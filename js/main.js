@@ -1,16 +1,21 @@
 
-getAccountInfo;
+isLogged;
 document.getElementById("btnLogin").addEventListener("click", Login);
 
-function Login(){
-  var isLoggedin = false;
-  gigya.accounts.showScreenSet({
-    screenSet:'Default-RegistrationLogin',
-    onAfterSubmit:getAccountInfo
+function isLogged(){
+  gigya.socialize.addEventHandlers({
+    onLogin:Login
   });
 }
+function Login(eventObj){
+  console.log(eventObj);
+  // gigya.accounts.showScreenSet({
+  //   screenSet:'Default-RegistrationLogin',
+  //   onAfterSubmit:getAccountInfo
+  // });
+}
 function getAccountInfo(){
-  console.log(gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse }));
+  gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
 }
 function getAccountInfoResponse(response)
 {
@@ -22,6 +27,5 @@ function getAccountInfoResponse(response)
     else {
         console.log('Error :' + response.errorMessage);
     }
-    return "hey";   
 }
  
