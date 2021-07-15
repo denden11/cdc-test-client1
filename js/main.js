@@ -2,16 +2,28 @@
 
 document.getElementById("btnLogin").addEventListener("click", Login);
 function Login(){
-  var sample = gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});
-  console.log(sample);
+  gigya.accounts.showScreenSet({
+    screenSet:'Default-RegistrationLogin',
+    callback:afterLogin
+  });
+
+}
+function afterLogin(response){
+  if ( response.errorCode == 0 ) {           
+    console.log(response);
+  }
+  else {
+      alert('Error :' + response.errorMessage);
+  }   
 }
 
 function getAccountInfoResponse(response)
 {
     if ( response.errorCode == 0 ) {           
-        var profile = response['profile'];
-        var msg = profile['firstName'] + ' is ' + profile['age'] + ' years old';
-        alert(msg);
+        // var profile = response['profile'];
+        // var msg = profile['firstName'] + ' is ' + profile['age'] + ' years old';
+        // alert(msg);
+        console.log(response);
     }
     else {
         alert('Error :' + response.errorMessage);
