@@ -4,6 +4,7 @@ import {liteRegStart} from "./lite-registration.js";
 }
 document.getElementById("btnConnect").addEventListener("click", Login);
 document.getElementById("btnRegister").addEventListener("click", Register);
+document.getElementById("btnLiteRegister").addEventListener("click", Register);
 
 function Login() {
   var params = {
@@ -34,4 +35,7 @@ function onLogin(response) {
 
 function Register(){
   gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});
+}
+function LiteRegister(){
+  gigya.accounts.showScreenSet({screenSet:'Default-LiteRegistration'});
 }
