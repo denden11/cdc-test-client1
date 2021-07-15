@@ -4,7 +4,7 @@ import {liteRegStart} from "./lite-registration.js";
 }
 document.getElementById("btnConnect").addEventListener("click", Login);
 document.getElementById("btnRegister").addEventListener("click", Register);
-document.getElementById("btnLiteRegister").addEventListener("click", Register);
+document.getElementById("btnLiteRegister").addEventListener("click", LiteRegister);
 
 function Login() {
   var params = {
