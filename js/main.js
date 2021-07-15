@@ -18,6 +18,7 @@ function afterLogout(response) {
     alert('User has logged out');
     document.getElementById("txtWelcome").innerHTML = "Welcome";
     document.getElementById("btnLoginLogout").innerHTML = "Login / Register";
+    isLogged = false;
   }
   else {
     alert('Error :' + response.errorMessage);
