@@ -34,8 +34,8 @@ function getAccountInfoResponse(response)
       document.getElementById("btnLoginLogout").innerHTML = "Logout";
       isLogged = true;
   }
-  else {
-      console.log('Error :' + response.errorMessage);
-  }
+  // else {
+  //     console.log('Error :' + response.errorMessage);
+  // }
 }
  
