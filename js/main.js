@@ -14,10 +14,12 @@ function afterLogin(response){
 function getAccountInfoResponse(response)
 {
     if ( response.errorCode == 0 ) {
+        document.getElementById("txtWelcome").innerHTML = "Welcome" + response.profile.firstName;
+        document.getElementById("btnLogin").innerHTML = response.profile.firstName;
         console.log(response);
     }
     else {
-        alert('Error :' + response.errorMessage);
+        console.log('Error :' + response.errorMessage);
     }   
 }
  
