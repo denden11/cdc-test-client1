@@ -28,7 +28,7 @@ function getAccountInfoResponse(response)
 {
   if ( response.errorCode == 0 ) {
       document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
-      document.getElementById("btnLogin").innerHTML = "Logout";
+      document.getElementById("btnLoginLogout").innerHTML = "Logout";
       isLogged = true;
   }
   else {
