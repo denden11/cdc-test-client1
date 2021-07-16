@@ -41,6 +41,7 @@ function getAccountInfo(){
 }
 function getAccountInfoResponse(response)
 {
+  console.log(response);
   if ( response.errorCode == 0 ) {
       document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
       document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
