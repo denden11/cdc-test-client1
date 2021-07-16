@@ -3,3 +3,8 @@
   font-size: 4rem;
   font-weight: 700;
 }
+.subscribe-container{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

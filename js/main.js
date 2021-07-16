@@ -1,6 +1,7 @@
 
 getAccountInfo();
 document.getElementById("btnLoginLogout").addEventListener("click", LoginLogout);
+document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 var isLogged = false;
 
 function LoginLogout(){
@@ -34,8 +35,10 @@ function getAccountInfoResponse(response)
       document.getElementById("btnLoginLogout").innerHTML = "Logout";
       isLogged = true;
   }
-  // else {
-  //     console.log('Error :' + response.errorMessage);
-  // }
 }
- 
+function liteRegistration() {
+  gigya.accounts.showScreenSet({
+    screenSet:'Default-LiteRegistration'
+    // onAfterSubmit:getAccountInfo
+  });
+}
