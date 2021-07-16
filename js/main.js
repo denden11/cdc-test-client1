@@ -28,8 +28,8 @@ function afterLogout(response) {
   if ( response.errorCode == 0 ) {
     alert('User has logged out');
     document.getElementById("txtWelcome").innerHTML = "Welcome";
-    document.getElementById("btnLoginLogout").innerHTML = "Login / Register";
     isLogged = false;
+    logCheck();
   }
   else {
     alert('Error :' + response.errorMessage);
@@ -42,8 +42,9 @@ function getAccountInfoResponse(response)
 {
   if ( response.errorCode == 0 ) {
       document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
-      document.getElementById("btnLoginLogout").innerHTML = "Logout";
+      document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
       isLogged = true;
+      logCheck();
   }
 }
 function liteRegistration() {
