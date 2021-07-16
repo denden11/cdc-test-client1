@@ -1,11 +1,11 @@
 
-getAccountInfo();
+logCheck();
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 document.getElementById("btnLogin").addEventListener("click", login);
 document.getElementById("btnLogout").addEventListener("click", logout);
 var isLogged = false;
 
-function logCheck(params) {
+function logCheck() {
   if (isLogged) {
     document.getElementById("btnLogin").classList.add("d-none");
     document.getElementById("dropdownUsername").classList.remove("d-none");
