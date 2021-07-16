@@ -1,4 +1,5 @@
 
+getAccountInfo();
 logCheck();
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 document.getElementById("btnLogin").addEventListener("click", login);
