@@ -1,19 +1,29 @@
 
 getAccountInfo();
-document.getElementById("btnLoginLogout").addEventListener("click", LoginLogout);
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
+document.getElementById("btnLogin").addEventListener("click", login);
+document.getElementById("btnLogout").addEventListener("click", logout);
 var isLogged = false;
 
-function LoginLogout(){
+function logCheck(params) {
   if (isLogged) {
-    gigya.accounts.logout({callback:afterLogout});
-  }else {
-    gigya.accounts.showScreenSet({
-      screenSet:'Default-RegistrationLogin',
-      onAfterSubmit:getAccountInfo
-    });
+    document.getElementById("btnLogin").classList.add("d-none");
+    document.getElementById("dropdownUsername").classList.remove("d-none");
+  } else {
+    document.getElementById("btnLogin").classList.remove("d-none");
+    document.getElementById("dropdownUsername").classList.add("d-none");
   }
 }
+function login(){
+  gigya.accounts.showScreenSet({
+    screenSet:'Default-RegistrationLogin',
+    onAfterSubmit:getAccountInfo
+  });
+}
+function logout() {
+  gigya.accounts.logout({callback:afterLogout});
+}
+
 function afterLogout(response) {
   if ( response.errorCode == 0 ) {
     alert('User has logged out');
