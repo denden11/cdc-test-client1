@@ -29,4 +29,4 @@ function liteRegistration() {
   });
 }
 
-export * from 'main.js';
+export {logCheck};
