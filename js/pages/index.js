@@ -1,4 +1,6 @@
 window.addEventListener("load", function(){
+  var noErrorCode = 0;
+
   gigya.socialize.addEventHandlers({
     onLogin:onLoginResponse,
     onLogout:onLogoutResponse,
@@ -12,5 +14,13 @@ window.addEventListener("load", function(){
   }
   function onErrorResponse(response) {
     console.log(response);
+  }
+  gigya.accounts.getAccountInfo({ callback: displayName });
+  function displayName(response) {
+    if (response.errorCode == noErrorCode) {
+      document.getElementById("txtWelcome").innerHTML = "Welcome " + response.user.firstName;
+    } else {
+      document.getElementById("txtWelcome").innerHTML = "Welcome";
+    }
   }
 });
