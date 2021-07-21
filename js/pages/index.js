@@ -6,6 +6,8 @@ window.addEventListener("load", function(){
     onLogout:onLogoutResponse,
     onError:onErrorResponse
   });
+  gigya.accounts.getAccountInfo({ callback: displayName });
+
   function onLoginResponse(response){
     document.getElementById("txtWelcome").innerHTML = "Welcome " + response.user.firstName;
   }
@@ -15,7 +17,6 @@ window.addEventListener("load", function(){
   function onErrorResponse(response) {
     console.log(response);
   }
-  gigya.accounts.getAccountInfo({ callback: displayName });
   function displayName(response) {
     if (response.errorCode == noErrorCode) {
       document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
