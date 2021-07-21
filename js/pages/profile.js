@@ -7,7 +7,6 @@ gigya.socialize.addEventHandlers({
 });
 gigya.accounts.getAccountInfo({ callback: displayProfile });
 function displayProfile(response) {
-  console.log(response);
   if (response.errorCode == noErrorCode) {
     document.getElementById("profilePicture").src = response.profile.photoURL;
     document.getElementById("fullName").innerHTML = response.profile.firstName +" "+response.profile.lastName;
