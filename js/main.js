@@ -11,8 +11,11 @@ function login(){
 function logout(callbackFun) {
   gigya.accounts.logout({callback:callbackFun});
 }
-function getAccountInfo(callbackFun){
-  gigya.accounts.getAccountInfo({ callback: callbackFun });
+function getAccountInfo(){
+  gigya.accounts.getAccountInfo({callback: callbackFun});
+}
+function callbackFun(res) {
+  console.log(res);
 }
 function liteRegistration() {
   gigya.accounts.showScreenSet({
