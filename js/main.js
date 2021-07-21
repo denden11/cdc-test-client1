@@ -8,17 +8,8 @@ function login(){
     onAfterSubmit:getAccountInfo
   });
 }
-function logout() {
-  gigya.accounts.logout({callback:afterLogout});
-}
-
-function afterLogout(response) {
-  if ( response.errorCode == 0 ) {
-    isLogged = false;
-  }
-  else {
-    alert('Error :' + response.errorMessage);
-  }
+function logout(callbackFun) {
+  gigya.accounts.logout({callback:callbackFun});
 }
 function getAccountInfo(callbackFun){
   gigya.accounts.getAccountInfo({ callback: callbackFun });

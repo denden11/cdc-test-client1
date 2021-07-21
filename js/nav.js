@@ -2,7 +2,7 @@ import {login,liteRegistration,logout,getAccountInfo} from "./main.js";
 
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 document.getElementById("btnLogin").addEventListener("click", login);
-document.getElementById("btnLogout").addEventListener("click", logout);
+document.getElementById("btnLogout").addEventListener("click", logout(afterLogout));
 
 getAccountInfo(getAccountInfoResponse);
 function getAccountInfoResponse(response) {
@@ -15,4 +15,11 @@ function getAccountInfoResponse(response) {
     document.getElementById("dropdownUsername").classList.add("d-none");
   }
 }
-
+function afterLogout(response) {
+  if ( response.errorCode == 0 ) {
+    isLogged = false;
+  }
+  else {
+    alert('Error :' + response.errorMessage);
+  }
+}
