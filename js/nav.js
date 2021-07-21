@@ -1,4 +1,4 @@
-import {login,liteRegistration,logout,logCheck} from 'main.js';
+import {login,liteRegistration,logout,logCheck} from './main.js';
 
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 document.getElementById("btnLogin").addEventListener("click", login);

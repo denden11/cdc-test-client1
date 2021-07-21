@@ -1,4 +1,4 @@
-import {getAccountInfo} from 'main.js';
+import {getAccountInfo} from '../main.js';
 
 getAccountInfo(getAccountInfoResponse);
 function getAccountInfoResponse(response)
