@@ -22,7 +22,8 @@ window.addEventListener("load", function(){
   }
   function registerTFA(){
     gigya.accounts.showScreenSet({
-      screenSet:'gigya-tfa-registration-screen'
+      screenSet:'Default-RegistrationLogin',
+      startScreen:'gigya-tfa-registration-screen'
     });
   }
  
