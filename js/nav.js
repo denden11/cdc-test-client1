@@ -6,13 +6,14 @@ document.getElementById("btnLogout").addEventListener("click", logout);
 
 getAccountInfo(getAccountInfoResponse);
 function getAccountInfoResponse(response) {
-  if (logCheck) {
-    document.getElementById("btnLogin").classList.add("d-none");
-    document.getElementById("dropdownUsername").classList.remove("d-none");
-    document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
-  } else {
-    document.getElementById("btnLogin").classList.remove("d-none");
-    document.getElementById("dropdownUsername").classList.add("d-none");
-  }
+  console.log(response);
+  // if (logCheck) {
+  //   document.getElementById("btnLogin").classList.add("d-none");
+  //   document.getElementById("dropdownUsername").classList.remove("d-none");
+  //   document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
+  // } else {
+  //   document.getElementById("btnLogin").classList.remove("d-none");
+  //   document.getElementById("dropdownUsername").classList.add("d-none");
+  // }
 }
 
