@@ -3,9 +3,13 @@ gigya.socialize.addEventHandlers({
   onLogout:onLogoutResponse
 });
 gigya.accounts.getAccountInfo({ callback: displayProfile });
-function displayProfile(res) {
-  console.log(res);
-  document.getElementById("profilePicture").src = res.profile.photoURL;
+function displayProfile(response) {
+  console.log(response);
+  if (response.errorCode == 0) {
+    document.getElementById("profilePicture").src = response.profile.photoURL;
+  } else {
+    window.location.href = "/";
+  }
 }
 function onLogoutResponse(response) {
   console.log(response);
