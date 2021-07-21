@@ -28,7 +28,6 @@ function logout() {
 function afterLogout(response) {
   if ( response.errorCode == 0 ) {
     alert('User has logged out');
-    document.getElementById("txtWelcome").innerHTML = "Welcome";
     isLogged = false;
     logCheck();
   }
@@ -42,11 +41,12 @@ function getAccountInfo(){
 function getAccountInfoResponse(response)
 {
   if ( response.errorCode == 0 ) {
-      document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
-      isLogged = true;
-      logCheck();
+    document.getElementById("dropdownUsername").innerHTML = response.profile.firstName;
+    isLogged = true;
+    logCheck();
   }
 }
+
 function liteRegistration() {
   gigya.accounts.showScreenSet({
     screenSet:'Default-LiteRegistration'

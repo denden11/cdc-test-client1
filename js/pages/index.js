@@ -1,13 +1,15 @@
 
 gigya.socialize.addEventHandlers({
   onLogin:onLoginResponse,
-  onLogout:onLogoutResponse
+  onLogout:onLogoutResponse,
+  onError:onErrorResponse
 });
 function onLoginResponse(response){
-  console.log(response);
   document.getElementById("txtWelcome").innerHTML = "Welcome " + response.user.firstName;
 }
 function onLogoutResponse() {
   document.getElementById("txtWelcome").innerHTML = "Welcome";
 }
-    
+function onErrorResponse(response) {
+  console.log(response);
+}
