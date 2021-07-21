@@ -10,7 +10,7 @@ function displayProfile(response) {
   console.log(response);
   if (response.errorCode == noErrorCode) {
     document.getElementById("profilePicture").src = response.profile.photoURL;
-    document.getElementById("profilePicture").src = response.profile.fullName;
+    document.getElementById("profilePicture").src = response.profile.firstName +" "+response.profile.lastName;
   } else {
     window.location.href = homepageURL;
   }
