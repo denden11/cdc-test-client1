@@ -50,6 +50,5 @@ function getAccountInfoResponse(response)
 function liteRegistration() {
   gigya.accounts.showScreenSet({
     screenSet:'Default-LiteRegistration'
-    // onAfterSubmit:getAccountInfo
   });
 }
