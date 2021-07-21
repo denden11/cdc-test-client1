@@ -1,15 +1,12 @@
 
 gigya.socialize.addEventHandlers({
-  onLogin:getAccountInfoResponse
+  onLogin:onLoginResponse,
+  onLogout:onLogoutResponse
 });
-function getAccountInfoResponse(response)
-{
-  console.log(response);
-  if ( response.errorCode == 0 ) {
-    document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
-  }
-  else{
-    document.getElementById("txtWelcome").innerHTML = "Welcome";
-  }
+function onLoginResponse(response){
+  document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
+}
+function onLogoutResponse(response) {
+  document.getElementById("txtWelcome").innerHTML = "Welcome";
 }
     
