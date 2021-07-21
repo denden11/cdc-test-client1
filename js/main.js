@@ -29,4 +29,4 @@ function liteRegistration() {
   });
 }
 
-export {getAccountInfo};
+export * from "./main.js";
