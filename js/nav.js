@@ -4,7 +4,7 @@ document.getElementById("btnSubscribe").addEventListener("click", liteRegistrati
 document.getElementById("btnLogin").addEventListener("click", login);
 document.getElementById("btnLogout").addEventListener("click", logout(afterLogout));
 
-getAccountInfo(getAccountInfoResponse);
+getAccountInfo();
 // function getAccountInfoResponse(response) {
 //   console.log(response);
 //   if (response.errorCode == 0) {
