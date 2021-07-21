@@ -6,7 +6,7 @@ gigya.socialize.addEventHandlers({
 function onLoginResponse(response){
   document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
 }
-function onLogoutResponse(response) {
+function onLogoutResponse() {
   document.getElementById("txtWelcome").innerHTML = "Welcome";
 }
     
