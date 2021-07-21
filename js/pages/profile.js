@@ -7,6 +7,8 @@ window.addEventListener("load", function(){
     onLogout:onLogoutResponse
   });
   gigya.accounts.getAccountInfo({ callback: displayProfile });
+  document.getElementById("btnRegisterTFA").addEventListener("click", registerTFA);
+
   function displayProfile(response) {
     if (response.errorCode == noErrorCode) {
       document.getElementById("profilePicture").src = response.profile.photoURL;
@@ -18,4 +20,10 @@ window.addEventListener("load", function(){
   function onLogoutResponse() {
     window.location.href = homepageURL;
   }
+  function registerTFA(){
+    gigya.accounts.showScreenSet({
+      screenSet:'gigya-tfa-registration-screen'
+    });
+  }
+ 
 });
