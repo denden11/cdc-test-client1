@@ -1,6 +1,7 @@
-
-getAccountInfo();
-logCheck();
+window.addEventListener("load", function(){
+  getAccountInfo();
+  logCheck();
+});
 document.getElementById("btnSubscribe").addEventListener("click", liteRegistration);
 document.getElementById("btnLogin").addEventListener("click", login);
 document.getElementById("btnLogout").addEventListener("click", logout);
