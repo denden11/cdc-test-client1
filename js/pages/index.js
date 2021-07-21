@@ -1,6 +1,6 @@
 
 gigya.socialize.addEventHandlers({
-  onAfterSubmit:getAccountInfoResponse
+  onLogin:getAccountInfoResponse
 });
 function getAccountInfoResponse(response)
 {
