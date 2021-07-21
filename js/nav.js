@@ -17,7 +17,8 @@ function getAccountInfoResponse(response) {
 }
 function afterLogout(response) {
   if ( response.errorCode == 0 ) {
-    isLogged = false;
+    document.getElementById("btnLogin").classList.remove("d-none");
+    document.getElementById("dropdownUsername").classList.add("d-none");
   }
   else {
     alert('Error :' + response.errorMessage);
