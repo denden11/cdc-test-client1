@@ -18,7 +18,7 @@ window.addEventListener("load", function(){
   gigya.accounts.getAccountInfo({ callback: displayName });
   function displayName(response) {
     if (response.errorCode == noErrorCode) {
-      document.getElementById("txtWelcome").innerHTML = "Welcome " + response.user.firstName;
+      document.getElementById("txtWelcome").innerHTML = "Welcome " + response.profile.firstName;
     } else {
       document.getElementById("txtWelcome").innerHTML = "Welcome";
     }
