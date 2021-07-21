@@ -21,7 +21,7 @@ function afterLogout(response) {
   }
 }
 function getAccountInfo(callbackFun){
-  gigya.accounts.getAccountInfo({ callback: getAccountInfoResponse });
+  gigya.accounts.getAccountInfo({ callback: callbackFun });
 }
 function liteRegistration() {
   gigya.accounts.showScreenSet({
