@@ -1,96 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CDC-test-client1</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript"
-    src="https://cdns.us1.gigya.com/js/gigya.js?apikey=3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ"></script>
-</head>
-
-<body>
-  <div class="gigya-screen-set" id="Markup-Extension-Test" data-responsive="true" data-dialog-style="modern" data-wizard-migration-keys="migrate_translation_handlers_unique_key">
-    <div class="gigya-screen v2 portrait" data-width="auto" id="gigya-subscribe-with-email-screen" gigya-conditional:class="viewport.width < 500 ? gigya-composite-control-active gigya-screen v2 portrait mobile : gigya-composite-control-active gigya-screen v2 portrait" gigya-expression:data-caption="screenset.translations['GIGYA_SUBSCRIBE_WITH_EMAIL_SCREEN_CAPTION']">
-        <form class="gigya-subscribe-with-email-form" data-on-success-screen="gigya-subscribe-thank-you-screen" id="gigya-subscribe-with-email-form">
-            <div class="gigya-layout-row">
-                <div class="gigya-layout-row">
-                    <h2 class="gigya-composite-control-header gigya-conditional gigya-header" data-wizard-text-bold="bold" data-translation-key="HEADER_83468630035309730_LABEL"></h2>
-                </div>
-                <div class="gigya-layout-row">
-                    <div class="gigya-composite-control gigya-spacer gigya-spacer-divider" data-units="1" style="height: 1px;"></div>
-                </div>
-                <div class="gigya-layout-row with-two-inputs">
-                    <div class="gigya-layout-cell">
-                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
-                            <input type="text" aria-label="First name" class="gigya-input-text" name="profile.firstName" show-valid-checkmark="true" formnovalidate="formnovalidate" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_147571769985825060_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_147571769985825060_PLACEHOLDER']">
-                            <span class="gigya-error-msg" data-bound-to="profile.firstName"></span>
-                        </div>
-                    </div>
-                    <div class="gigya-layout-cell">
-                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
-                            <input type="text" aria-label="Last name" class="gigya-input-text" name="profile.lastName" show-valid-checkmark="true" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_46950290923884456_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_46950290923884456_PLACEHOLDER']">
-                            <span class="gigya-error-msg" data-bound-to="profile.lastName"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="gigya-layout-row">
-                    <div class="gigya-composite-control gigya-composite-control-textbox">
-                        <input type="text" name="email" id="gigya-textbox-email" class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-required="true" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_121939299492173400_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_121939299492173400_PLACEHOLDER']">
-                        <span class="gigya-error-msg" data-bound-to="profile.email"></span>
-                    </div>
-                </div>
-                <div class="gigya-layout-row">
-                    <div class="gigya-composite-control gigya-composite-control-checkbox">
-                        <input type="checkbox" class="gigya-input-checkbox" name="" id="gigya-checkbox-subscription" checked="checked" tabindex="0">
-                        <label class="gigya-label" for="gigya-checkbox-subscription">
-                            <span class="gigya-label-text gigya-checkbox-text" data-translation-key="CHECKBOX_83852588336579280_LABEL"></span>
-                            <label class="gigya-required-display" data-bound-to="" style="display: none">*</label></label>
-                    </div>
-                </div>
-                <div class="gigya-layout-row">
-                    <div class="gigya-composite-control" data-translation-key="LABEL_105080926959312820_LABEL"></div>
-                </div>
-                <div class="gigya-layout-row">
-                    <div class="gigya-composite-control gigya-composite-control-submit">
-                        <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_90117941803482020_VALUE']">
-                    </div>
-                    <div class="gigya-clear"></div>
-                </div>
-            </div>
-            <div class="gigya-layout-row">
-                <div class="gigya-layout-cell responsive">
-                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-subscribe-with-email-form">
-                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-subscribe-with-email-form"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="gigya-clear"></div>
-        </form>
-    </div>
-    <div class="gigya-screen v2 portrait" data-width="auto" id="gigya-subscribe-thank-you-screen" gigya-conditional:class="viewport.width < 500 ? gigya-composite-control-active gigya-screen v2 portrait mobile : gigya-composite-control-active gigya-screen v2 portrait" gigya-expression:data-caption="screenset.translations['GIGYA_SUBSCRIBE_THANK_YOU_SCREEN_CAPTION']">
-        <div class="gigya-layout-row">
-            <div class="subscribe-thank-you" data-translation-key="LABEL_98314475370414220_LABEL"></div>
-            <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 1px;"></div>
-        </div>
-        <div class="gigya-layout-row">
-            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="_finish" style="text-align: center;" data-translation-key="LINK_5653623291998700_LABEL"></a>
-        </div>
-        <div class="gigya-clear"></div>
-    </div>
+<div class="gigya-screen-set"
+  id="markup-screen-set"
+  style="display:none"
+  data-on-existing-login-identifier-screen="markup-screen-set-link-accounts"
+  data-on-pending-registration-screen="markup-screen-set-registration-completion"
+  data-on-pending-verification-screen="markup-screen-set-pending-verification-screen"
+  data-width="600"
+  data-height="300">
+  <!-- Login screen -->
+  <div class="gigya-screen" id="markup-screen-set-login-screen">
+    <form class="gigya-login-form" data-on-success-screen="_finish">
+      <input type="text" name="loginID" data-gigya-placeholder="Username or Email" />
+      <br/>
+      <input type="password" name="password" data-gigya-placeholder="Password" />
+      <br/>
+      <input type="submit" value="Login"/>
+      <br/>
+    </form>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
+  <!-- Register screen -->
+  <div class="gigya-screen" id="markup-screen-set-register-screen">
+    <form class="gigya-register-form" data-on-success-screen="markup-screen-set-registration-completion">
+      <input type="text" name="username" data-gigya-placeholder="Username" />
+      <br/>
+      <input type="text" name="email" data-gigya-placeholder="Email" />
+      <br/>
+      <input type="text" name="profile.firstName" data-gigya-placeholder="First Name" />
+      <br/>
+      <input type="text" name="profile.lastName" data-gigya-placeholder="Last Name" />
+      <br/>
+      <input type="password" name="password" data-gigya-placeholder="Password" />
+      <br/>
+      <input type="password" name="passwordRetype" data-gigya-placeholder="Confirm Password" />
+      <br/>
+      <br/>
+      <input type="submit" value="Register"/>
+      <br/>
+    </form>
+  </div>
 
-</html>
+
+</div>
