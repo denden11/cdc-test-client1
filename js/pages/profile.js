@@ -20,11 +20,4 @@ window.addEventListener("load", function(){
   function onLogoutResponse() {
     window.location.href = homepageURL;
   }
-  function registerTFA(){
-    gigya.accounts.showScreenSet({
-      screenSet:'Default-RegistrationLogin',
-      startScreen:'gigya-tfa-registration-screen'
-    });
-  }
- 
 });
