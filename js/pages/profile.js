@@ -7,7 +7,6 @@ window.addEventListener("load", function(){
     onLogout:onLogoutResponse
   });
   gigya.accounts.getAccountInfo({ callback: displayProfile });
-  document.getElementById("btnRegisterTFA").addEventListener("click", registerTFA);
 
   function displayProfile(response) {
     if (response.errorCode == noErrorCode) {
