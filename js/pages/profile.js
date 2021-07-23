@@ -28,7 +28,8 @@ window.addEventListener("load", function(){
   }
   function showEditProfile() {
     gigya.accounts.showScreenSet({
-      screenSet:'Default-ProfileUpdate'
+      screenSet:'Default-ProfileUpdate',
+      onAfterSubmit:displayProfile
     });
   }
 });
