@@ -36,12 +36,18 @@ window.addEventListener("load", function(){
       onAfterSubmit:getProfileData
     });
   }
-  function deleteAccount() {
+  function getAccountToDelete() {
     var result = confirm("Are you sure you wan't to delete your account?");
     if (result) {
-      gigya.socialize.deleteAccount();
+      gigya.accounts.getAccountInfo({ callback: deleteAccount });
     }
   }  
+  function deleteAccount(response) {
+    gigya.accounts.deleteAccount({
+      UID: response.UID,
+      callback: afterDelete
+    });
+  }
   function afterDelete(response) {
     console.log(response);
   }
