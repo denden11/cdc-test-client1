@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
   getProfileData();
 
   document.getElementById("btnEditProfile").addEventListener("click",showEditProfile);
-  document.getElementById("btnDeleteAccount").addEventListener("click",deleteAccount);
+  document.getElementById("btnDeleteAccount").addEventListener("click",getAccountToDelete);
   
   function getProfileData() {
     gigya.accounts.getAccountInfo({ callback: displayProfile });
