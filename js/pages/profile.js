@@ -39,7 +39,7 @@ window.addEventListener("load", function(){
   function deleteAccount() {
     var result = confirm("Are you sure you wan't to delete your account?");
     if (result) {
-      gigya.accounts.deleteAccount({callback:afterDelete});
+      gigya.accounts.deleteAccount();
     }
   }  
   function afterDelete(response) {
