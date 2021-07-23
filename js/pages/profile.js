@@ -9,6 +9,8 @@ window.addEventListener("load", function(){
   getProfileData();
 
   document.getElementById("btnEditProfile").addEventListener("click",showEditProfile);
+  document.getElementById("btnDeleteAccount").addEventListener("click",deleteAccount);
+  
   function getProfileData() {
     gigya.accounts.getAccountInfo({ callback: displayProfile });
   }
@@ -34,4 +36,11 @@ window.addEventListener("load", function(){
       onAfterSubmit:getProfileData
     });
   }
+  function deleteAccount() {
+    var result = confirm("Are you sure you wan't to delete your account?");
+    if (result) {
+      gigya.accounts.deleteAccount();
+    }
+  }  
+  
 });
