@@ -11,6 +11,7 @@ window.addEventListener("load", function(){
   document.getElementById("btnEditProfile").addEventListener("click",showEditProfile);
 
   function displayProfile(response) {
+    console(response);
     if (response.errorCode == noErrorCode) {
       document.getElementById("profilePicture").src = response.profile.photoURL;
       document.getElementById("fullName").innerHTML = response.profile.firstName +" "+response.profile.lastName;
