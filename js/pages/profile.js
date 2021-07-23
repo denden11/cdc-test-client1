@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
   getProfileData();
 
   document.getElementById("btnEditProfile").addEventListener("click",showEditProfile);
-  document.getElementById("btnDeleteAccount").addEventListener("click",getAccountToDelete);
+  document.getElementById("btnDeactivateAccount").addEventListener("click",getAccountToDeactivate);
   
   function getProfileData() {
     gigya.accounts.getAccountInfo({ callback: displayProfile });
@@ -36,19 +36,17 @@ window.addEventListener("load", function(){
       onAfterSubmit:getProfileData
     });
   }
-  function getAccountToDelete() {
-    var result = confirm("Are you sure you wan't to delete your account?");
+  function getAccountToDeactivate() {
+    var result = confirm("Are you sure you wan't to deactivate your account?");
     if (result) {
-      gigya.accounts.getAccountInfo({ callback: deleteAccount });
+      var params = {
+        isActive:false,
+        callback: afterDeactivate
+      }
+      gigya.accounts.setAccountInfo(params);
     }
   }  
-  function deleteAccount(response) {
-    gigya.accounts.deleteAccount({
-      UID: response.UID,
-      callback: afterDelete
-    });
-  }
-  function afterDelete(response) {
+  function afterDeactivate(response) {
     console.log(response);
   }
 
