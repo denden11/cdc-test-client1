@@ -8,6 +8,8 @@ window.addEventListener("load", function(){
   });
   gigya.accounts.getAccountInfo({ callback: displayProfile });
 
+  document.getElementById("btnEditPhoneNumber").addEventListener("click",showEditPhoneNumber);
+
   function displayProfile(response) {
     if (response.errorCode == noErrorCode) {
       document.getElementById("profilePicture").src = response.profile.photoURL;
@@ -18,5 +20,11 @@ window.addEventListener("load", function(){
   }
   function onLogoutResponse() {
     window.location.href = homepageURL;
+  }
+  function showEditPhoneNumber() {
+    gigya.accounts.showScreenSet({
+      screenSet:'Default-ProfileUpdate',
+      startScreen:'gigya-mobile-edit-screen'
+    });
   }
 });
