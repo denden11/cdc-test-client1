@@ -40,7 +40,7 @@ window.addEventListener("load", function(){
     gigya.accounts.getAccountInfo({ callback: disableLogin });
   }
   async function disableLogin(res) {
-    const response = await fetch('https://accounts.us1.gigya.com/accounts.setAccountInfo?"isActive":false,"UID":"'+res.UID+'","format":"json","apiKey":"3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ"', {
+    const response = await fetch('https://accounts.us1.gigya.com/accounts.setAccountInfo?isActive:false,UID:e8e80239079e4a64a5bfdb480407e7f8,format:json,apiKey:3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ', {
       method: 'POST'
     });
     const myJson = await response.json();
