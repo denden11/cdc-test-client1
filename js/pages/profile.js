@@ -41,7 +41,8 @@ window.addEventListener("load", function(){
     if (result) {
       var params = {
         isActive:false,
-        callback: afterDeactivate
+        callback: afterDeactivate,
+        data: {deleteUser: true}
       }
       gigya.accounts.setAccountInfo(params);
     }
