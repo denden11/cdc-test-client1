@@ -39,12 +39,20 @@ window.addEventListener("load", function(){
   function getAccountToDisable() {
     gigya.accounts.getAccountInfo({ callback: disableLogin });
   }
-  async function disableLogin(res) {
-    const response = await fetch('https://accounts.us1.gigya.com/accounts.setAccountInfo?isActive:false,UID:e8e80239079e4a64a5bfdb480407e7f8,format:json,apiKey:3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ', {
-      method: 'POST'
+  async function disableLogin(url = '', data = {}) {
+    const response = await fetch(url, {
+      method: 'POST', 
+      mode: 'cors', 
+      cache: 'no-cache',
+      credentials: 'same-origin', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow', 
+      referrerPolicy: 'no-referrer', 
+      body: JSON.stringify(data)
     });
-    const myJson = await response.json();
-    console.log(myJson)
+    return response.json(); 
   }
   function getAccountToDeactivate() {
     var result = confirm("Are you sure you wan't to deactivate your account?");
@@ -53,7 +61,11 @@ window.addEventListener("load", function(){
         data: {deleteUser: true}
       }
       gigya.accounts.setAccountInfo(params);
-      getAccountToDisable();
+      disableLogin('https://accounts.us1.gigya.com/accounts.setAccountInfo', 
+               {"isActive":false,"UID":"e71c64e13e0a4880a1c4d85d7bfcaf2d","format":"json","apiKey":"3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ"})
+      .then(data => {
+          console.log(data); 
+      });
     }
   }  
   function afterDeactivate(response) {
