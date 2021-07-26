@@ -41,6 +41,7 @@ window.addEventListener("load", function(){
     if (result) {
       var params = {
         isActive:false,
+        isRegistered:false,
         callback: afterDeactivate,
         data: {deleteUser: true}
       }
