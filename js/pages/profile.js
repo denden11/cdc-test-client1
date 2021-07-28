@@ -62,7 +62,7 @@ window.addEventListener("load", function(){
       }
       gigya.accounts.setAccountInfo(params);
       disableLogin('https://accounts.us1.gigya.com/accounts.setAccountInfo', 
-               {"isActive":false,"UID":"e71c64e13e0a4880a1c4d85d7bfcaf2d","format":"json","apiKey":"3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ"})
+               {"isActive":"false","UID":"e71c64e13e0a4880a1c4d85d7bfcaf2d","format":"json","apiKey":"3_ojnmzVXjaGTCcK4MHoSjrWzeXQPFfYHRW9XvKMPEf4PzI6kliiUrY924BBtaZuBQ"})
       .then(data => {
           console.log(data); 
       });
